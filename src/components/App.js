@@ -1,4 +1,4 @@
-import { Stack } from '@chakra-ui/core'
+import { Divider, Stack } from '@chakra-ui/core'
 import React from 'react'
 import Entry from './Entry'
 import Form from './Form'
@@ -8,35 +8,44 @@ import Header from './Header'
 const data = [
   {
     "content": {
-      "stringValue": "Hello World"
+      "stringValue": "React Query rulez!"
     },
     "date": {
-        "timestampValue": "2020-10-31T16:00:00Z"
+        "timestampValue": "thought of a few minutes ago."
     }
   },
   {
     "content": {
-      "stringValue": "Hello World"
+      "stringValue": "Used Firebase ;)"
     },
     "date": {
-        "timestampValue": "2020-10-31T16:00:00Z"
+        "timestampValue": "thought of a few hours ago."
     }
   },
   {
     "content": {
-      "stringValue": "Hello World"
+      "stringValue": "Created with ChakraUI <3"
     },
     "date": {
-        "timestampValue": "2020-10-31T16:00:00Z"
+        "timestampValue": "thought of a few hours ago."
+    }
+  },
+  {
+    "content": {
+      "stringValue": "Lightning talk incoming :D"
+    },
+    "date": {
+        "timestampValue": "thought of a few days ago."
     }
   }
 ]
 
 const App = () => (
-  <Stack height="calc(100vh - 1.5rem)" spacing={3} margin={3} shouldWrapChildren>
+  <Stack height="calc(100vh - 1.5rem)" spacing={3} shouldWrapChildren>
     <Header />
     <Form />
-    <Stack spacing={4} overflowY="auto" shouldWrapChildren>
+    <Divider borderColor="gray.400" mr={3} ml={3} />
+    <Stack spacing={4} overflowY="auto" shouldWrapChildren ml={3} mr={3} pb={3}>
       {
         data.map(datum => (
           <Entry
