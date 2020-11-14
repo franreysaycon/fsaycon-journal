@@ -1,6 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import { Box, IconButton, Text, useTheme } from '@chakra-ui/core'
+import convertTimestampText from '../lib/convertTimestampText'
 
 const Entry = ({ content, date }) => {
 
@@ -19,7 +20,7 @@ const Entry = ({ content, date }) => {
         >
             <Box d="flex" flexDirection="column" flexGrow={1}>
                 <Text fontSize="xl" color="blue.700">{content}</Text>
-                <Text fontSize="sm">{date}</Text>
+                <Text fontSize="sm">{convertTimestampText(date)}</Text>
             </Box>
             <Box d="flex">
                 <IconButton
