@@ -1,5 +1,5 @@
-import useEntryQuery from './useEntryQuery'
+import useGetEntries from './useGetEntries'
 
 export {
-    useEntryQuery
+    useGetEntries
 }
