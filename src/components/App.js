@@ -29,6 +29,7 @@ const App = () => {
             data.map(datum => (
               <Entry
                 key={datum?.name}
+                name={datum?.name}
                 content={datum?.fields?.content?.stringValue}
                 date={datum?.createTime}
               />

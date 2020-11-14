@@ -2,10 +2,12 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import { Box, IconButton, Text, useTheme } from '@chakra-ui/core'
 import convertTimestampText from '../lib/convertTimestampText'
+import { useDeleteEntry } from '../mutations'
 
-const Entry = ({ content, date }) => {
+const Entry = ({ name, content, date }) => {
 
     const theme = useTheme()
+    const { deleteEntry } = useDeleteEntry()
     const grayColor = theme.colors.gray['400']
 
     return (    
@@ -31,6 +33,7 @@ const Entry = ({ content, date }) => {
                     color="white"
                     alignSelf="flex-end"
                     borderRadius="50%"
+                    onClick={() => deleteEntry(name)}
                 />
             </Box>
         </Box>
@@ -38,6 +41,7 @@ const Entry = ({ content, date }) => {
 }
 
 Entry.propTypes = {
+    name: PropTypes.string.isRequired,
     content: PropTypes.string.isRequired,
     date: PropTypes.string.isRequired,
 }
